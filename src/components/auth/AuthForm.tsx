@@ -16,7 +16,10 @@ export function AuthForm({ type, onSwitch, onSubmit }: AuthFormProps) {
   };
 
   return (
-    <div className="w-full max-w-md p-8 rounded-lg border border-white/20 backdrop-blur-sm">
+    <div className="w-full max-w-md p-8 rounded-lg backdrop-blur-sm mb-40">
+      <div className="flex flex-col items-center text-center mb-14">
+        <img src="/src/image/logo.png" alt="Logo" className="h-40 w-40" />
+      </div>
       <h2 className="text-2xl font-bold text-white mb-6 text-center">
         {type === 'login' ? 'Connexion' : 'Inscription'}
       </h2>
@@ -43,7 +46,7 @@ export function AuthForm({ type, onSwitch, onSubmit }: AuthFormProps) {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg text-white focus:border-white focus:outline-none"
+            className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg text-white focus:border-white focus:outline-none mb-8"
             required
           />
         </div>

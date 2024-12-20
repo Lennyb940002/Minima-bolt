@@ -5,9 +5,7 @@ export interface StockItem {
   quantity: number;
   unitPrice: number;
   salePrice: number;
-  category: string;
-  threshold: number;
-  lastUpdated: string;
+  totalPrice?: number;
 }
 
 export interface StockSummary {
@@ -17,30 +15,8 @@ export interface StockSummary {
   lowStockCount: number;
 }
 
-export interface StockFilter {
-  category: string;
-  searchTerm: string;
-  showLowStock: boolean;
-}
-
-export interface Product {
-  title: string;
-  reference: string;
-  quantity: number;
-  unitPrice: number;
-  totalPrice: number;
-  salePrice: number;
-}
-
-// types.ts
-export interface StockItem {
-  id: string;
+export interface LowStockItem {
   product: string;
   reference: string;
-  quantity: number;
-  unitPrice: number;
-  salePrice: number;
-  category: string;
-  threshold: number;
-  lastUpdated: string;
+  stock: number;
 }

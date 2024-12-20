@@ -9,20 +9,19 @@ interface StockTableProps {
 
 export function StockTable({ items }: StockTableProps) {
   return (
-    <div className="bg-white/5 rounded-lg border border-white/10 overflow-hidden">
+    <div className="bg-black border border-white/10 rounded-2xl overflow-hidden">
+      <div className="text-2xl font-bold text-white mt-4 mb-4 ml-4">Détails des Produits</div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-white/10">
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Produit</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Référence</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Catégorie</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Quantité</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Prix Unitaire</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Prix Total</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Prix de Vente</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Dernière MàJ</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white/60">Actions</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Produit</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Référence</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Quantité</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Prix Unitaire</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Prix Total</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Prix de Vente</th>
+              <th className="px-4 py-3 text-left text-lg font-bolt text-white">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -37,14 +36,12 @@ export function StockTable({ items }: StockTableProps) {
                   </div>
                 </td>
                 <td className="px-4 py-3 text-sm text-white">{item.reference}</td>
-                <td className="px-4 py-3 text-sm text-white">{item.category}</td>
                 <td className="px-4 py-3 text-sm text-white">{item.quantity}</td>
                 <td className="px-4 py-3 text-sm text-white">{formatCurrency(item.unitPrice)}</td>
                 <td className="px-4 py-3 text-sm text-white">
                   {formatCurrency(item.quantity * item.unitPrice)}
                 </td>
                 <td className="px-4 py-3 text-sm text-white">{formatCurrency(item.salePrice)}</td>
-                <td className="px-4 py-3 text-sm text-white">{item.lastUpdated}</td>
                 <td className="px-4 py-3 text-sm">
                   <button className="p-1 hover:bg-white/10 rounded">
                     <MoreHorizontal className="w-4 h-4 text-white" />
